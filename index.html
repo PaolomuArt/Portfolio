@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Rivera — Product & Brand Designer</title>
+<meta name="description" content="Portfolio of Alex Rivera, a product and brand designer focused on systems, identity, and interfaces that feel like someone made them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFAF7;
+  --ink:#1A1A1A;
+  --ink-soft:#5b5953;
+  --flare:#FF5A36;
+  --sun:#FFD23F;
+  --peri:#5B5FEF;
+  --warmgrey:#E8E6DD;
+  --card-bg:#FFFFFF;
+  --max:1180px;
+  --gap:20px;
+  --radius:18px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+:focus-visible{outline:3px solid var(--peri);outline-offset:3px;border-radius:4px;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);display:inline-flex;align-items:center;gap:10px;}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--flare);display:inline-block;}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(250,250,247,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,26,26,.08);}
+nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+.brand{font-family:'Fraunces',serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:10px;}
+.brand .role-chip{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;background:var(--warmgrey);color:var(--ink-soft);padding:4px 9px;border-radius:20px;}
+.nav-links{display:flex;gap:32px;font-size:15px;font-weight:500;}
+.nav-links a{position:relative;padding:6px 0;}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--flare);transition:width .25s var(--ease);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:30px;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s var(--ease),transform .2s var(--ease);}
+.nav-cta:hover{background:var(--flare);transform:translateY(-1px);}
+@media(max-width:780px){.nav-links{display:none;}.brand .role-chip{display:none;}}
+
+/* HERO */
+.hero{padding:96px 0 80px;position:relative;}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:40px;}
+.hero-greeting{font-size:17px;color:var(--ink-soft);max-width:280px;}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(40px,7.2vw,92px);line-height:1.04;letter-spacing:-.01em;max-width:980px;}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ink-soft);}
+.hero h1 .mark{position:relative;white-space:nowrap;}
+.hero h1 .mark svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.32em;overflow:visible;}
+.hero h1 .mark path{fill:none;stroke:var(--flare);stroke-width:10;stroke-linecap:round;stroke-dasharray:340;stroke-dashoffset:340;animation:draw 1.1s var(--ease) .5s forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+.hero-sub{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;align-items:center;}
+.hero-sub p{font-size:18px;color:var(--ink-soft);margin-right:8px;}
+.chip{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;padding:8px 16px;border-radius:30px;border:1.5px solid var(--ink);text-transform:uppercase;letter-spacing:.02em;transition:background .2s var(--ease),color .2s var(--ease),transform .2s var(--ease);}
+.chip:nth-of-type(1){background:var(--sun);border-color:var(--sun);}
+.chip:nth-of-type(2){background:var(--peri);border-color:var(--peri);color:#fff;}
+.chip:nth-of-type(3){background:var(--flare);border-color:var(--flare);color:#fff;}
+.chip:hover{transform:translateY(-3px) rotate(-1deg);}
+.hero-bottom{display:flex;justify-content:flex-end;margin-top:18px;}
+.hero-bottom span{font-size:18px;color:var(--ink-soft);max-width:320px;text-align:right;}
+@media(max-width:780px){
+  .hero{padding:64px 0 56px;}
+  .hero-top{flex-direction:column;gap:18px;}
+  .hero-bottom{justify-content:flex-start;}
+  .hero-bottom span{text-align:left;}
+}
+
+/* SECTIONS */
+section{padding:96px 0;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap;}
+.section-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,46px);margin-top:10px;}
+.section-head p{max-width:320px;color:var(--ink-soft);font-size:15px;}
+
+/* =============================================
+   PROJECT CARDS — parallax image, no text body
+   ============================================= */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);}
+@media(max-width:980px){.work-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
+
+.card{
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:3/4;
+  cursor:pointer;
+  /* perspective for tilt */
+  perspective:600px;
+  /* subtle shadow always present */
+  box-shadow:0 4px 24px -8px rgba(26,26,26,.18);
+  transition:box-shadow .4s var(--ease);
+}
+.card:hover{box-shadow:0 20px 48px -16px rgba(26,26,26,.32);}
+
+/* inner wrapper that actually tilts */
+.card-inner{
+  position:absolute;inset:0;
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .08s linear;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+
+/* the image layer that shifts on parallax */
+.card-img-layer{
+  position:absolute;
+  /* 10% bigger on each side so parallax doesn't expose edges */
+  inset:-10%;
+  width:120%;
+  height:120%;
+  transition:transform .08s linear;
+  will-change:transform;
+  display:flex;align-items:center;justify-content:center;
+}
+.card[data-tint="flare"] .card-img-layer{background:var(--flare);}
+.card[data-tint="sun"]   .card-img-layer{background:var(--sun);}
+.card[data-tint="peri"]  .card-img-layer{background:var(--peri);}
+.card[data-tint="ink"]   .card-img-layer{background:var(--ink);}
+
+/* decorative SVG icon inside the colour field */
+.card-img-layer svg{
+  width:36%;height:36%;
+  opacity:.85;
+  transition:transform .5s var(--ease);
+  pointer-events:none;
+  flex-shrink:0;
+}
+.card:hover .card-img-layer svg{transform:scale(1.12) rotate(-4deg);}
+.card[data-tint="sun"] .card-img-layer svg{stroke:var(--ink)!important;}
+
+/* overlay gradient so label sits on top */
+.card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(10,10,10,.72) 0%, rgba(10,10,10,0) 55%);
+  opacity:0;
+  transition:opacity .35s var(--ease);
+  border-radius:var(--radius);
+  z-index:2;
+  display:flex;align-items:flex-end;padding:22px;
+}
+.card:hover .card-overlay{opacity:1;}
+.card-label{
+  color:#fff;
+  display:flex;align-items:flex-end;justify-content:space-between;width:100%;
+}
+.card-label h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;line-height:1.1;}
+.card-label .meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
+.card-label .card-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.65);}
+.card-label .tag-row{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+.card-label .tag{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.02em;background:rgba(255,255,255,.18);color:#fff;padding:4px 9px;border-radius:20px;backdrop-filter:blur(4px);}
+
+/* arrow badge top-right */
+.card-arrow{
+  position:absolute;top:14px;right:14px;z-index:3;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.7) rotate(-45deg);
+  transition:opacity .3s var(--ease),transform .3s var(--ease);
+}
+.card:hover .card-arrow{opacity:1;transform:scale(1) rotate(0deg);}
+.card-arrow svg{width:16px;height:16px;stroke:#fff;stroke-width:2;}
+
+/* mobile: always show label, no hover needed */
+@media(hover:none){
+  .card-overlay{opacity:1;}
+  .card-arrow{opacity:1;transform:scale(1);}
+}
+
+/* =============================================
+   ABOUT — mobile-safe dark block
+   ============================================= */
+.about-section{background:var(--ink);color:var(--paper);}
+.about-section .eyebrow{color:rgba(250,250,247,.55);}
+.about-section .eyebrow .dot{background:var(--sun);}
+.about-section .section-head p{color:rgba(250,250,247,.6);}
+.about-section .section-head h2{color:var(--paper);}
+
+/* inner rounded card only on desktop */
+.about-inner{
+  background:var(--ink);
+  border-radius:0;
+  padding:96px 0;
+}
+@media(min-width:700px){
+  .about-inner{
+    border-radius:32px;
+    margin:0 28px;
+    padding:80px 0;
+    /* hack: compensate for the .wrap padding so content still aligns */
+  }
+  .about-section{background:var(--paper);}
+}
+
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:56px;}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+.stat{border-top:1px solid rgba(250,250,247,.16);padding-top:18px;}
+.stat .num{font-family:'Fraunces',serif;font-size:clamp(34px,5vw,52px);font-weight:600;color:var(--sun);line-height:1;}
+.stat .label{margin-top:8px;font-size:14px;color:rgba(250,250,247,.65);}
+
+.about-bio{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+@media(max-width:780px){.about-bio{grid-template-columns:1fr;}}
+.about-bio p{font-size:19px;line-height:1.55;color:rgba(250,250,247,.85);}
+.about-bio p strong{color:var(--paper);font-weight:600;}
+
+.timeline{display:flex;flex-direction:column;gap:16px;}
+.timeline-row{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(250,250,247,.1);font-size:14px;}
+.timeline-row .yrs{font-family:'JetBrains Mono',monospace;color:var(--sun);font-size:12.5px;}
+.timeline-row .role{color:var(--paper);font-weight:600;}
+.timeline-row .org{color:rgba(250,250,247,.55);margin-top:2px;}
+
+/* =============================================
+   PHILOSOPHY — flip cards
+   ============================================= */
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);}
+@media(max-width:900px){.phil-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.phil-grid{grid-template-columns:1fr;}}
+
+.phil-card{
+  perspective:800px;
+  min-height:220px;
+  cursor:default;
+}
+.phil-card-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;
+  transition:transform .55s var(--ease);
+}
+.phil-card:hover .phil-card-inner,
+.phil-card.flipped .phil-card-inner{
+  transform:rotateY(180deg);
+}
+.phil-face{
+  position:absolute;inset:0;
+  border-radius:var(--radius);
+  padding:28px 24px;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  display:flex;flex-direction:column;
+  border:1px solid rgba(26,26,26,.08);
+}
+.phil-front{background:var(--card-bg);}
+.phil-back{
+  transform:rotateY(180deg);
+  border:none;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
+}
+
+/* back card accent colours per card */
+.phil-card:nth-of-type(1) .phil-back{background:var(--flare);}
+.phil-card:nth-of-type(2) .phil-back{background:var(--peri);}
+.phil-card:nth-of-type(3) .phil-back{background:var(--sun);}
+.phil-card:nth-of-type(4) .phil-back{background:var(--ink);}
+.phil-card:nth-of-type(5) .phil-back{background:var(--flare);}
+.phil-card:nth-of-type(6) .phil-back{background:var(--peri);}
+.phil-card:nth-of-type(3) .phil-back{background:var(--sun);}
+
+.phil-face .icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:auto;}
+.phil-card:nth-of-type(1) .phil-front .icon{background:var(--flare);}
+.phil-card:nth-of-type(2) .phil-front .icon{background:var(--peri);}
+.phil-card:nth-of-type(3) .phil-front .icon{background:var(--sun);}
+.phil-card:nth-of-type(4) .phil-front .icon{background:var(--ink);}
+.phil-card:nth-of-type(5) .phil-front .icon{background:var(--flare);}
+.phil-card:nth-of-type(6) .phil-front .icon{background:var(--peri);}
+.phil-face .icon svg{width:20px;height:20px;}
+.phil-card:nth-of-type(3) .phil-front .icon svg{stroke:var(--ink);}
+
+.phil-front h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;margin-top:16px;line-height:1.25;}
+.phil-front .hover-hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-top:12px;display:flex;align-items:center;gap:6px;opacity:.7;}
+.phil-front .hover-hint svg{width:12px;height:12px;}
+
+.phil-back p{font-size:16px;line-height:1.55;font-weight:500;}
+.phil-card:nth-of-type(3) .phil-back p{color:var(--ink);}
+.phil-card:nth-of-type(1) .phil-back p,
+.phil-card:nth-of-type(2) .phil-back p,
+.phil-card:nth-of-type(4) .phil-back p,
+.phil-card:nth-of-type(5) .phil-back p,
+.phil-card:nth-of-type(6) .phil-back p{color:rgba(255,255,255,.92);}
+.phil-back .back-label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;opacity:.6;}
+.phil-card:nth-of-type(3) .phil-back .back-label{color:var(--ink);}
+.phil-card:nth-of-type(1) .phil-back .back-label,
+.phil-card:nth-of-type(2) .phil-back .back-label,
+.phil-card:nth-of-type(4) .phil-back .back-label,
+.phil-card:nth-of-type(5) .phil-back .back-label,
+.phil-card:nth-of-type(6) .phil-back .back-label{color:#fff;}
+
+/* On touch devices: tap to flip */
+@media(hover:none){
+  .phil-front .hover-hint span::before{content:"Tap";}
+  .phil-front .hover-hint span::after{content:"";}
+}
+@media(hover:hover){
+  .phil-front .hover-hint span::before{content:"Hover";}
+}
+
+/* CONTACT */
+.contact{text-align:center;padding-top:60px;}
+.contact .eyebrow{justify-content:center;margin-bottom:24px;}
+.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(36px,7vw,78px);line-height:1.05;max-width:780px;margin:0 auto 36px;}
+.contact h2 .mark{position:relative;white-space:nowrap;color:var(--flare);font-style:italic;}
+.contact-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:32px;}
+.contact-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:40px;font-weight:600;font-size:15.5px;transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease);}
+.contact-btn.primary{background:var(--flare);color:#fff;}
+.contact-btn.primary:hover{background:var(--ink);transform:translateY(-3px);}
+.contact-btn.secondary{border:1.5px solid var(--ink);}
+.contact-btn.secondary:hover{background:var(--ink);color:var(--paper);transform:translateY(-3px);}
+
+footer{margin-top:90px;padding:32px 0 48px;border-top:1px solid rgba(26,26,26,.1);display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--ink-soft);flex-wrap:wrap;gap:12px;}
+footer .foot-links{display:flex;gap:20px;}
+footer a:hover{color:var(--flare);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#home" class="brand">Alex Rivera <span class="role-chip">Product Designer</span></a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#approach">Approach</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-top">
+        <p class="hero-greeting">Hey — I'm Alex. Scroll on, everything's right here on this page.</p>
+        <span class="eyebrow"><span class="dot"></span>Available for select projects</span>
+      </div>
+      <h1>I design <span class="mark">products<svg viewBox="0 0 300 30" preserveAspectRatio="none"><path d="M5,20 Q150,2 295,18"/></svg></span> and brands<br>that feel like <em>someone made them.</em></h1>
+      <div class="hero-sub">
+        <p>I do</p>
+        <span class="chip">Product Design</span>
+        <span class="chip">Brand Identity</span>
+        <span class="chip">Design Systems</span>
+      </div>
+      <div class="hero-bottom">
+        <span>and everything that lives in between — strategy, motion, the occasional 2am rebrand.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>01 — Selected Work</span>
+          <h2>A few favorites.</h2>
+        </div>
+        <p>Six projects, six very different problems. Click through for the full story on each.</p>
+      </div>
+
+      <div class="work-grid">
+
+        <a href="#" class="card reveal" data-tint="flare">
+          <div class="card-inner" data-card-inner>
+            <div class="card-img-layer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+          </div>
+          <div class="card-overlay">
+            <div class="card-label">
+              <h3>Kiln</h3>
+              <div class="meta">
+                <span class="card-num">01</span>
+                <div class="tag-row"><span class="tag">Product</span><span class="tag">UX</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        </a>
+
+        <a href="#" class="card reveal" data-tint="peri">
+          <div class="card-inner" data-card-inner>
+            <div class="card-img-layer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+          </div>
+          <div class="card-overlay">
+            <div class="card-label">
+              <h3>Fernbank</h3>
+              <div class="meta">
+                <span class="card-num">02</span>
+                <div class="tag-row"><span class="tag">Branding</span><span class="tag">Packaging</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        </a>
+
+        <a href="#" class="card reveal" data-tint="sun">
+          <div class="card-inner" data-card-inner>
+            <div class="card-img-layer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.2"><path d="M4 19V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M13 3v5h5"/></svg>
+            </div>
+          </div>
+          <div class="card-overlay">
+            <div class="card-label">
+              <h3>Lumen Docs</h3>
+              <div class="meta">
+                <span class="card-num">03</span>
+                <div class="tag-row"><span class="tag">Design System</span><span class="tag">SaaS</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        </a>
+
+        <a href="#" class="card reveal" data-tint="ink">
+          <div class="card-inner" data-card-inner>
+            <div class="card-img-layer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg>
+            </div>
+          </div>
+          <div class="card-overlay">
+            <div class="card-label">
+              <h3>Northbound</h3>
+              <div class="meta">
+                <span class="card-num">04</span>
+                <div class="tag-row"><span class="tag">Web Design</span><span class="tag">Pitch Deck</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        </a>
+
+        <a href="#" class="card reveal" data-tint="flare">
+          <div class="card-inner" data-card-inner>
+            <div class="card-img-layer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+          </div>
+          <div class="card-overlay">
+            <div class="card-label">
+              <h3>Hearth</h3>
+              <div class="meta">
+                <span class="card-num">05</span>
+                <div class="tag-row"><span class="tag">Mobile</span><span class="tag">UX Research</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        </a>
+
+        <a href="#" class="card reveal" data-tint="peri">
+          <div class="card-inner" data-card-inner>
+            <div class="card-img-layer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+            </div>
+          </div>
+          <div class="card-overlay">
+            <div class="card-label">
+              <h3>Coastline Capital</h3>
+              <div class="meta">
+                <span class="card-num">06</span>
+                <div class="tag-row"><span class="tag">Branding</span><span class="tag">Web App</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-inner">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow"><span class="dot"></span>02 — If you're still scrolling</span>
+            <h2>Here's my background.</h2>
+          </div>
+          <p>The short version: eight years, four cities, one very consistent obsession with type.</p>
+        </div>
+
+        <div class="stats-grid reveal">
+          <div class="stat"><div class="num">8+</div><div class="label">Years in the field</div></div>
+          <div class="stat"><div class="num">60+</div><div class="label">Projects shipped</div></div>
+          <div class="stat"><div class="num">12</div><div class="label">Industries worked in</div></div>
+          <div class="stat"><div class="num">3</div><div class="label">Cities called home</div></div>
+        </div>
+
+        <div class="about-bio reveal">
+          <p>I'm a product and brand designer based between <strong>Madrid</strong> and wherever the project needs me. I started out doing identity work for small studios, then drifted into product design once I realized brand and interface are really the same problem at different zoom levels. These days I split my time between early-stage startups and the occasional brand refresh for people who've outgrown their first logo.</p>
+          <div class="timeline">
+            <div class="timeline-row"><span class="yrs">2017–19</span><div><div class="role">Graphic Designer</div><div class="org">Studio Marea</div></div></div>
+            <div class="timeline-row"><span class="yrs">2019–21</span><div><div class="role">Brand Designer</div><div class="org">Freelance, various clients</div></div></div>
+            <div class="timeline-row"><span class="yrs">2021–23</span><div><div class="role">Senior Product Designer</div><div class="org">Northwind Labs</div></div></div>
+            <div class="timeline-row"><span class="yrs">2023–Now</span><div><div class="role">Lead Designer</div><div class="org">Independent practice</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH / PHILOSOPHY -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>03 — How I work</span>
+          <h2>Six things you can expect from me.</h2>
+        </div>
+        <p>Hover each card to flip it — or tap on mobile.</p>
+      </div>
+
+      <div class="phil-grid">
+
+        <div class="phil-card reveal">
+          <div class="phil-card-inner">
+            <div class="phil-face phil-front">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <h3>Design earns its seat at the table</h3>
+              <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
+            </div>
+            <div class="phil-face phil-back">
+              <span class="back-label">The principle</span>
+              <p>The best decisions come from being in the strategy conversation early, not handed a brief after it's already decided.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phil-card reveal">
+          <div class="phil-card-inner">
+            <div class="phil-face phil-front">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <h3>First impressions matter</h3>
+              <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
+            </div>
+            <div class="phil-face phil-back">
+              <span class="back-label">The principle</span>
+              <p>Visuals speak before words do. My job is to make sure they're saying exactly the right thing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phil-card reveal">
+          <div class="phil-card-inner">
+            <div class="phil-face phil-front">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <h3>I get things done, the right way</h3>
+              <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
+            </div>
+            <div class="phil-face phil-back">
+              <span class="back-label">The principle</span>
+              <p>On time, every time, without quietly cutting corners to get there. Quality isn't optional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phil-card reveal">
+          <div class="phil-card-inner">
+            <div class="phil-face phil-front">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div>
+              <h3>I keep things easy for everyone</h3>
+              <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
+            </div>
+            <div class="phil-face phil-back">
+              <span class="back-label">The principle</span>
+              <p>Clear communication, simple files, no jargon you need a glossary for. Complexity is the enemy.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phil-card reveal">
+          <div class="phil-card-inner">
+            <div class="phil-face phil-front">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+              <h3>I'm all about typography</h3>
+              <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
+            </div>
+            <div class="phil-face phil-back">
+              <span class="back-label">The principle</span>
+              <p>It can make or break a design — I treat type choices with the seriousness they deserve.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phil-card reveal">
+          <div class="phil-card-inner">
+            <div class="phil-face phil-front">
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
+              <h3>I'm curious, always learning</h3>
+              <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
+            </div>
+            <div class="phil-face phil-back">
+              <span class="back-label">The principle</span>
+              <p>Especially where creativity and new tools intersect — that's where the most interesting work lives.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact">
+      <span class="eyebrow reveal"><span class="dot"></span>04 — What's next</span>
+      <h2 class="reveal">Got a project brewing?<br><span class="mark">I'd love to hear about it.</span></h2>
+      <div class="contact-links reveal">
+        <a href="mailto:hello@alexrivera.design" class="contact-btn primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          Email me
+        </a>
+        <a href="#" class="contact-btn secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Find me on LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>Designed &amp; built by Alex Rivera · © 2026</span>
+      <div class="foot-links"><a href="#home">Back to top ↑</a></div>
+    </footer>
+  </div>
+</main>
+
+<script>
+// ── Scroll reveal ──────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, { threshold: 0.1 });
+revealEls.forEach(el => io.observe(el));
+
+// ── Card cursor-parallax ───────────────────────────────
+// Only run on pointer devices; skip on touch
+const hasPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+if(hasPointer){
+  document.querySelectorAll('.card').forEach(card => {
+    const inner     = card.querySelector('[data-card-inner]');
+    const imgLayer  = card.querySelector('.card-img-layer');
+
+    // Settings
+    const TILT  = 10;   // max tilt degrees
+    const SHIFT = 12;   // max image parallax px
+
+    let rafId = null;
+    let targetTX = 0, targetTY = 0, targetIX = 0, targetIY = 0;
+    let currTX   = 0, currTY   = 0, currIX   = 0, currIY   = 0;
+
+    function lerp(a, b, t){ return a + (b - a) * t; }
+
+    function tick(){
+      currTX = lerp(currTX, targetTX, 0.12);
+      currTY = lerp(currTY, targetTY, 0.12);
+      currIX = lerp(currIX, targetIX, 0.08);
+      currIY = lerp(currIY, targetIY, 0.08);
+
+      inner.style.transform    = `rotateY(${currTX}deg) rotateX(${-currTY}deg)`;
+      imgLayer.style.transform = `translate(${currIX}px, ${currIY}px)`;
+
+      rafId = requestAnimationFrame(tick);
+    }
+
+    card.addEventListener('mouseenter', () => {
+      rafId = requestAnimationFrame(tick);
+    });
+
+    card.addEventListener('mousemove', e => {
+      const r  = card.getBoundingClientRect();
+      const nx = (e.clientX - r.left)  / r.width  - 0.5;   // -0.5 to 0.5
+      const ny = (e.clientY - r.top)   / r.height - 0.5;
+
+      targetTX =  nx * TILT;
+      targetTY =  ny * TILT;
+      targetIX = -nx * SHIFT;   // image moves opposite for depth
+      targetIY = -ny * SHIFT;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      targetTX = targetTY = targetIX = targetIY = 0;
+      // keep ticking until settled, then stop
+      const settle = setInterval(() => {
+        if(Math.abs(currTX) < 0.05 && Math.abs(currTY) < 0.05){
+          cancelAnimationFrame(rafId);
+          inner.style.transform = '';
+          imgLayer.style.transform = '';
+          clearInterval(settle);
+        }
+      }, 60);
+    });
+  });
+}
+
+// ── Philosophy card tap-to-flip (touch devices) ────────
+document.querySelectorAll('.phil-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+});
+</script>
+
+</body>
+</html>
