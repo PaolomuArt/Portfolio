@@ -15,7 +15,7 @@
   --ink-soft:#6B6B6C;
   --flare:#50B0BE;
   --sun:#E4E4E4;
-  --peri:#518890;
+  --peri:#45747A;
   --warmgrey:#ECECEC;
   --card-bg:#FFFFFF;
   --max:1180px;
@@ -44,8 +44,8 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76
 .nav-links a{position:relative;padding:6px 0;}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--flare);transition:width .25s var(--ease);}
 .nav-links a:hover::after{width:100%;}
-.nav-links a.active{color:var(--flare);font-weight:700;}
-.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:var(--peri);font-weight:700;}
+.nav-links a.active::after{width:100%;background:var(--peri);}
 .nav-cta{background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:30px;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s var(--ease),transform .2s var(--ease);}
 .nav-cta:hover{background:var(--flare);color:var(--ink);transform:translateY(-1px);}
 .nav-cta.active{background:var(--flare);color:var(--ink);}
@@ -65,7 +65,7 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76
 .hero-sub p{font-size:18px;color:var(--ink-soft);margin-right:8px;}
 .chip{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;padding:8px 16px;border-radius:30px;border:1.5px solid var(--ink);text-transform:uppercase;letter-spacing:.02em;transition:background .2s var(--ease),color .2s var(--ease),transform .2s var(--ease);}
 .chip:nth-of-type(1){background:var(--sun);border-color:var(--sun);}
-.chip:nth-of-type(2){background:var(--peri);border-color:var(--peri);color:var(--ink);}
+.chip:nth-of-type(2){background:var(--peri);border-color:var(--peri);color:var(--paper);}
 .chip:nth-of-type(3){background:var(--flare);border-color:var(--flare);color:var(--ink);}
 .chip:hover{transform:translateY(-3px) rotate(-1deg);}
 .hero-bottom{display:flex;justify-content:flex-end;margin-top:18px;}
@@ -279,23 +279,23 @@ section{padding:96px 0;}
 .phil-card:nth-of-type(3) .phil-front .icon svg{stroke:var(--ink);}
 
 .phil-front h3{font-family:'Fraunces',serif;font-weight:600;font-size:18px;margin-top:16px;line-height:1.25;}
-.phil-front .hover-hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-top:12px;display:flex;align-items:center;gap:6px;opacity:.7;}
+.phil-front .hover-hint{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-top:12px;display:flex;align-items:center;gap:6px;}
 .phil-front .hover-hint svg{width:12px;height:12px;}
 
 .phil-back p{font-size:16px;line-height:1.55;font-weight:500;}
 .phil-card:nth-of-type(1) .phil-back p,
-.phil-card:nth-of-type(2) .phil-back p,
 .phil-card:nth-of-type(3) .phil-back p,
-.phil-card:nth-of-type(5) .phil-back p,
-.phil-card:nth-of-type(6) .phil-back p{color:var(--ink);}
+.phil-card:nth-of-type(5) .phil-back p{color:var(--ink);}
+.phil-card:nth-of-type(2) .phil-back p,
+.phil-card:nth-of-type(6) .phil-back p{color:var(--paper);}
 .phil-card:nth-of-type(4) .phil-back p{color:rgba(250,250,250,.92);}
-.phil-back .back-label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;opacity:.6;}
+.phil-back .back-label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;}
 .phil-card:nth-of-type(1) .phil-back .back-label,
-.phil-card:nth-of-type(2) .phil-back .back-label,
 .phil-card:nth-of-type(3) .phil-back .back-label,
-.phil-card:nth-of-type(5) .phil-back .back-label,
-.phil-card:nth-of-type(6) .phil-back .back-label{color:var(--ink);}
-.phil-card:nth-of-type(4) .phil-back .back-label{color:var(--paper);}
+.phil-card:nth-of-type(5) .phil-back .back-label{color:var(--ink);}
+.phil-card:nth-of-type(2) .phil-back .back-label,
+.phil-card:nth-of-type(4) .phil-back .back-label,
+.phil-card:nth-of-type(6) .phil-back .back-label{color:var(--paper);}
 
 /* On touch devices: tap to flip */
 @media(hover:none){
@@ -406,7 +406,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="peri">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -478,7 +478,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="peri">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -559,7 +559,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
               <h3>First impressions matter</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
@@ -615,7 +615,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
               <h3>I'm curious, always learning</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
