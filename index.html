@@ -10,13 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FAFAF7;
-  --ink:#1A1A1A;
-  --ink-soft:#5b5953;
-  --flare:#FF5A36;
-  --sun:#FFD23F;
-  --peri:#5B5FEF;
-  --warmgrey:#E8E6DD;
+  --paper:#FAFAFA;
+  --ink:#252324;
+  --ink-soft:#6B6B6C;
+  --flare:#50B0BE;
+  --sun:#E4E4E4;
+  --peri:#518890;
+  --warmgrey:#ECECEC;
   --card-bg:#FFFFFF;
   --max:1180px;
   --gap:20px;
@@ -36,7 +36,7 @@ img{max-width:100%;display:block;}
 .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--flare);display:inline-block;}
 
 /* NAV */
-header{position:sticky;top:0;z-index:50;background:rgba(250,250,247,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,26,26,.08);}
+header{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(37,35,36,.08);}
 nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
 .brand{font-family:'Fraunces',serif;font-weight:600;font-size:20px;display:flex;align-items:center;gap:10px;}
 .brand .role-chip{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.03em;background:var(--warmgrey);color:var(--ink-soft);padding:4px 9px;border-radius:20px;}
@@ -44,8 +44,11 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76
 .nav-links a{position:relative;padding:6px 0;}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--flare);transition:width .25s var(--ease);}
 .nav-links a:hover::after{width:100%;}
+.nav-links a.active{color:var(--flare);font-weight:700;}
+.nav-links a.active::after{width:100%;}
 .nav-cta{background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:30px;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s var(--ease),transform .2s var(--ease);}
-.nav-cta:hover{background:var(--flare);transform:translateY(-1px);}
+.nav-cta:hover{background:var(--flare);color:var(--ink);transform:translateY(-1px);}
+.nav-cta.active{background:var(--flare);color:var(--ink);}
 @media(max-width:780px){.nav-links{display:none;}.brand .role-chip{display:none;}}
 
 /* HERO */
@@ -62,8 +65,8 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76
 .hero-sub p{font-size:18px;color:var(--ink-soft);margin-right:8px;}
 .chip{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;padding:8px 16px;border-radius:30px;border:1.5px solid var(--ink);text-transform:uppercase;letter-spacing:.02em;transition:background .2s var(--ease),color .2s var(--ease),transform .2s var(--ease);}
 .chip:nth-of-type(1){background:var(--sun);border-color:var(--sun);}
-.chip:nth-of-type(2){background:var(--peri);border-color:var(--peri);color:#fff;}
-.chip:nth-of-type(3){background:var(--flare);border-color:var(--flare);color:#fff;}
+.chip:nth-of-type(2){background:var(--peri);border-color:var(--peri);color:var(--ink);}
+.chip:nth-of-type(3){background:var(--flare);border-color:var(--flare);color:var(--ink);}
 .chip:hover{transform:translateY(-3px) rotate(-1deg);}
 .hero-bottom{display:flex;justify-content:flex-end;margin-top:18px;}
 .hero-bottom span{font-size:18px;color:var(--ink-soft);max-width:320px;text-align:right;}
@@ -96,10 +99,10 @@ section{padding:96px 0;}
   /* perspective for tilt */
   perspective:600px;
   /* subtle shadow always present */
-  box-shadow:0 4px 24px -8px rgba(26,26,26,.18);
+  box-shadow:0 4px 24px -8px rgba(37,35,36,.18);
   transition:box-shadow .4s var(--ease);
 }
-.card:hover{box-shadow:0 20px 48px -16px rgba(26,26,26,.32);}
+.card:hover{box-shadow:0 20px 48px -16px rgba(37,35,36,.32);}
 
 /* inner wrapper that actually tilts */
 .card-inner{
@@ -181,9 +184,9 @@ section{padding:96px 0;}
    ABOUT — mobile-safe dark block
    ============================================= */
 .about-section{background:var(--ink);color:var(--paper);}
-.about-section .eyebrow{color:rgba(250,250,247,.55);}
-.about-section .eyebrow .dot{background:var(--sun);}
-.about-section .section-head p{color:rgba(250,250,247,.6);}
+.about-section .eyebrow{color:rgba(250,250,250,.55);}
+.about-section .eyebrow .dot{background:var(--flare);}
+.about-section .section-head p{color:rgba(250,250,250,.6);}
 .about-section .section-head h2{color:var(--paper);}
 
 /* inner rounded card only on desktop */
@@ -204,20 +207,20 @@ section{padding:96px 0;}
 
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:56px;}
 @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
-.stat{border-top:1px solid rgba(250,250,247,.16);padding-top:18px;}
-.stat .num{font-family:'Fraunces',serif;font-size:clamp(34px,5vw,52px);font-weight:600;color:var(--sun);line-height:1;}
-.stat .label{margin-top:8px;font-size:14px;color:rgba(250,250,247,.65);}
+.stat{border-top:1px solid rgba(250,250,250,.16);padding-top:18px;}
+.stat .num{font-family:'Fraunces',serif;font-size:clamp(34px,5vw,52px);font-weight:600;color:var(--flare);line-height:1;}
+.stat .label{margin-top:8px;font-size:14px;color:rgba(250,250,250,.65);}
 
 .about-bio{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
 @media(max-width:780px){.about-bio{grid-template-columns:1fr;}}
-.about-bio p{font-size:19px;line-height:1.55;color:rgba(250,250,247,.85);}
+.about-bio p{font-size:19px;line-height:1.55;color:rgba(250,250,250,.85);}
 .about-bio p strong{color:var(--paper);font-weight:600;}
 
 .timeline{display:flex;flex-direction:column;gap:16px;}
-.timeline-row{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(250,250,247,.1);font-size:14px;}
+.timeline-row{display:grid;grid-template-columns:90px 1fr;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(250,250,250,.1);font-size:14px;}
 .timeline-row .yrs{font-family:'JetBrains Mono',monospace;color:var(--sun);font-size:12.5px;}
 .timeline-row .role{color:var(--paper);font-weight:600;}
-.timeline-row .org{color:rgba(250,250,247,.55);margin-top:2px;}
+.timeline-row .org{color:rgba(250,250,250,.55);margin-top:2px;}
 
 /* =============================================
    PHILOSOPHY — flip cards
@@ -247,7 +250,7 @@ section{padding:96px 0;}
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
   display:flex;flex-direction:column;
-  border:1px solid rgba(26,26,26,.08);
+  border:1px solid rgba(37,35,36,.08);
 }
 .phil-front{background:var(--card-bg);}
 .phil-back{
@@ -280,19 +283,19 @@ section{padding:96px 0;}
 .phil-front .hover-hint svg{width:12px;height:12px;}
 
 .phil-back p{font-size:16px;line-height:1.55;font-weight:500;}
-.phil-card:nth-of-type(3) .phil-back p{color:var(--ink);}
 .phil-card:nth-of-type(1) .phil-back p,
 .phil-card:nth-of-type(2) .phil-back p,
-.phil-card:nth-of-type(4) .phil-back p,
+.phil-card:nth-of-type(3) .phil-back p,
 .phil-card:nth-of-type(5) .phil-back p,
-.phil-card:nth-of-type(6) .phil-back p{color:rgba(255,255,255,.92);}
+.phil-card:nth-of-type(6) .phil-back p{color:var(--ink);}
+.phil-card:nth-of-type(4) .phil-back p{color:rgba(250,250,250,.92);}
 .phil-back .back-label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;opacity:.6;}
-.phil-card:nth-of-type(3) .phil-back .back-label{color:var(--ink);}
 .phil-card:nth-of-type(1) .phil-back .back-label,
 .phil-card:nth-of-type(2) .phil-back .back-label,
-.phil-card:nth-of-type(4) .phil-back .back-label,
+.phil-card:nth-of-type(3) .phil-back .back-label,
 .phil-card:nth-of-type(5) .phil-back .back-label,
-.phil-card:nth-of-type(6) .phil-back .back-label{color:#fff;}
+.phil-card:nth-of-type(6) .phil-back .back-label{color:var(--ink);}
+.phil-card:nth-of-type(4) .phil-back .back-label{color:var(--paper);}
 
 /* On touch devices: tap to flip */
 @media(hover:none){
@@ -303,19 +306,30 @@ section{padding:96px 0;}
   .phil-front .hover-hint span::before{content:"Hover";}
 }
 
-/* CONTACT */
-.contact{text-align:center;padding-top:60px;}
-.contact .eyebrow{justify-content:center;margin-bottom:24px;}
-.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(36px,7vw,78px);line-height:1.05;max-width:780px;margin:0 auto 36px;}
+/* CONTACT — pinned dark reveal layer */
+#contact{
+  position:sticky;
+  top:0;
+  z-index:1;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+}
+.contact{text-align:left;padding-top:0;width:100%;}
+.contact .eyebrow{justify-content:flex-start;margin-bottom:24px;color:rgba(250,250,250,.55);}
+.contact h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(36px,7vw,78px);line-height:1.05;max-width:780px;margin:0 0 36px;}
 .contact h2 .mark{position:relative;white-space:nowrap;color:var(--flare);font-style:italic;}
-.contact-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:32px;}
+.contact-links{display:flex;justify-content:flex-start;gap:18px;flex-wrap:wrap;margin-top:32px;}
 .contact-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:40px;font-weight:600;font-size:15.5px;transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease);}
-.contact-btn.primary{background:var(--flare);color:#fff;}
-.contact-btn.primary:hover{background:var(--ink);transform:translateY(-3px);}
-.contact-btn.secondary{border:1.5px solid var(--ink);}
-.contact-btn.secondary:hover{background:var(--ink);color:var(--paper);transform:translateY(-3px);}
+.contact-btn.primary{background:var(--flare);color:var(--ink);}
+.contact-btn.primary:hover{background:var(--paper);color:var(--ink);transform:translateY(-3px);}
+.contact-btn.secondary{border:1.5px solid var(--paper);color:var(--paper);}
+.contact-btn.secondary:hover{background:var(--paper);color:var(--ink);transform:translateY(-3px);}
 
-footer{margin-top:90px;padding:32px 0 48px;border-top:1px solid rgba(26,26,26,.1);display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--ink-soft);flex-wrap:wrap;gap:12px;}
+footer{margin-top:90px;padding:32px 0 48px;border-top:1px solid rgba(37,35,36,.1);display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--ink-soft);flex-wrap:wrap;gap:12px;}
 footer .foot-links{display:flex;gap:20px;}
 footer a:hover{color:var(--flare);}
 
@@ -374,7 +388,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="flare">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -392,7 +406,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="peri">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -410,7 +424,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="sun">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.2"><path d="M4 19V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M13 3v5h5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><path d="M4 19V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M13 3v5h5"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -446,7 +460,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="flare">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -464,7 +478,7 @@ footer a:hover{color:var(--flare);}
         <a href="#" class="card reveal" data-tint="peri">
           <div class="card-inner" data-card-inner>
             <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
             </div>
           </div>
           <div class="card-overlay">
@@ -531,7 +545,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
               <h3>Design earns its seat at the table</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
@@ -545,7 +559,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
               <h3>First impressions matter</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
@@ -559,7 +573,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
               <h3>I get things done, the right way</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
@@ -587,7 +601,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
               <h3>I'm all about typography</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
@@ -601,7 +615,7 @@ footer a:hover{color:var(--flare);}
         <div class="phil-card reveal">
           <div class="phil-card-inner">
             <div class="phil-face phil-front">
-              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
               <h3>I'm curious, always learning</h3>
               <span class="hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span></span> to learn more</span>
             </div>
@@ -717,6 +731,22 @@ document.querySelectorAll('.phil-card').forEach(card => {
     card.classList.toggle('flipped');
   });
 });
+
+// ── Scroll-spy nav highlighting ─────────────────────────
+const spySections = document.querySelectorAll('main section[id]');
+const spyLinks = document.querySelectorAll('.nav-links a, .nav-cta');
+
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const id = entry.target.id;
+    spyLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
+  });
+}, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+spySections.forEach(sec => spy.observe(sec));
 </script>
 
 </body>
