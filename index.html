@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex Rivera — Product & Brand Designer</title>
-<meta name="description" content="Portfolio of Alex Rivera, a product and brand designer focused on systems, identity, and interfaces that feel like someone made them.">
+<title>Rivers — Diseñadora Digital</title>
+<meta name="description" content="Portfolio de Rivers (Paula Rio), diseñadora digital con más de 4 años de experiencia en branding, UX/UI, HTML &amp; CSS, motion graphics y vídeo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -89,6 +89,8 @@ section{padding:96px 0;}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);}
 @media(max-width:980px){.work-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
+#work .card{aspect-ratio:4/3;}
+#work .card-overlay{opacity:1;}
 
 .card{
   border-radius:var(--radius);
@@ -329,6 +331,23 @@ section{padding:96px 0;}
 .contact-btn.secondary{border:1.5px solid var(--paper);color:var(--paper);}
 .contact-btn.secondary:hover{background:var(--paper);color:var(--ink);transform:translateY(-3px);}
 
+/* GROW A PLANT */
+.plant-widget{max-width:280px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;}
+.plant-svg{width:180px;height:198px;overflow:visible;}
+.plant-soil{fill:var(--ink);opacity:.15;}
+.plant-pot{fill:var(--ink);}
+.plant-stem{stroke:var(--ink);stroke-width:6;stroke-linecap:round;transition:y2 .6s var(--ease);}
+.plant-leaf{opacity:0;transform:scale(0);transform-box:fill-box;transform-origin:center;transition:opacity .5s var(--ease),transform .5s var(--ease);}
+.plant-leaf path{fill:var(--flare);}
+.plant-leaf.visible{opacity:1;transform:scale(1);}
+.plant-flower{opacity:0;transform:scale(0);transform-box:fill-box;transform-origin:center;transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.plant-flower.visible{opacity:1;transform:scale(1);}
+.plant-flower .petal{fill:var(--peri);}
+.plant-flower .petal-center{fill:var(--sun);}
+.plant-caption{font-size:15px;color:var(--ink-soft);min-height:22px;}
+.plant-btn{font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:12px 24px;border-radius:40px;border:none;background:var(--flare);color:var(--ink);cursor:pointer;transition:transform .2s var(--ease),background .2s var(--ease);}
+.plant-btn:hover{background:var(--peri);color:var(--paper);transform:translateY(-2px);}
+
 footer{margin-top:90px;padding:32px 0 48px;border-top:1px solid rgba(37,35,36,.1);display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--ink-soft);flex-wrap:wrap;gap:12px;}
 footer .foot-links{display:flex;gap:20px;}
 footer a:hover{color:var(--flare);}
@@ -341,13 +360,13 @@ footer a:hover{color:var(--flare);}
 
 <header>
   <nav class="wrap">
-    <a href="#home" class="brand">Alex Rivera <span class="role-chip">Product Designer</span></a>
+    <a href="#home" class="brand">Rivers <span class="role-chip">Diseñadora Digital</span></a>
     <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#approach">Approach</a></li>
+      <li><a href="#work">Clientes</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#approach">Cómo trabajo</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Let's talk</a>
+    <a href="#contact" class="nav-cta">Hablemos</a>
   </nav>
 </header>
 
@@ -356,18 +375,19 @@ footer a:hover{color:var(--flare);}
   <section class="hero" id="home">
     <div class="wrap">
       <div class="hero-top">
-        <p class="hero-greeting">Hey — I'm Alex. Scroll on, everything's right here on this page.</p>
-        <span class="eyebrow"><span class="dot"></span>Available for select projects</span>
+        <p class="hero-greeting">Hola — soy Rivers. Sigue bajando, todo está aquí en esta página.</p>
+        <span class="eyebrow"><span class="dot"></span>Disponible para nuevos proyectos</span>
       </div>
-      <h1>I design <span class="mark">products<svg viewBox="0 0 300 30" preserveAspectRatio="none"><path d="M5,20 Q150,2 295,18"/></svg></span> and brands<br>that feel like <em>someone made them.</em></h1>
+      <h1>Diseño <span class="mark">marcas<svg viewBox="0 0 300 30" preserveAspectRatio="none"><path d="M5,20 Q150,2 295,18"/></svg></span> y piezas digitales<br>que se sienten <em>hechas a mano.</em></h1>
       <div class="hero-sub">
-        <p>I do</p>
-        <span class="chip">Product Design</span>
-        <span class="chip">Brand Identity</span>
-        <span class="chip">Design Systems</span>
+        <p>Hago</p>
+        <span class="chip">Branding</span>
+        <span class="chip">UX/UI · Figma</span>
+        <span class="chip">Motion Graphics</span>
+        <span class="chip">HTML &amp; CSS</span>
       </div>
       <div class="hero-bottom">
-        <span>and everything that lives in between — strategy, motion, the occasional 2am rebrand.</span>
+        <span>y todo lo que vive en medio — emails, edición de vídeo, la suite Adobe entera.</span>
       </div>
     </div>
   </section>
@@ -377,122 +397,31 @@ footer a:hover{color:var(--flare);}
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow"><span class="dot"></span>01 — Selected Work</span>
-          <h2>A few favorites.</h2>
+          <span class="eyebrow"><span class="dot"></span>01 — Con quién he trabajado</span>
+          <h2>Marcas que han confiado en mi trabajo.</h2>
         </div>
-        <p>Six projects, six very different problems. Click through for the full story on each.</p>
+        <p>Estos años he colaborado con equipos de sectores muy distintos — desde banca hasta ONGs, pasando por energía y tecnología.</p>
       </div>
 
       <div class="work-grid">
-
-        <a href="#" class="card reveal" data-tint="flare">
-          <div class="card-inner" data-card-inner>
-            <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
-          </div>
-          <div class="card-overlay">
-            <div class="card-label">
-              <h3>Kiln</h3>
-              <div class="meta">
-                <span class="card-num">01</span>
-                <div class="tag-row"><span class="tag">Product</span><span class="tag">UX</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
-        </a>
-
-        <a href="#" class="card reveal" data-tint="peri">
-          <div class="card-inner" data-card-inner>
-            <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-            </div>
-          </div>
-          <div class="card-overlay">
-            <div class="card-label">
-              <h3>Fernbank</h3>
-              <div class="meta">
-                <span class="card-num">02</span>
-                <div class="tag-row"><span class="tag">Branding</span><span class="tag">Packaging</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
-        </a>
-
-        <a href="#" class="card reveal" data-tint="sun">
-          <div class="card-inner" data-card-inner>
-            <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><path d="M4 19V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M13 3v5h5"/></svg>
-            </div>
-          </div>
-          <div class="card-overlay">
-            <div class="card-label">
-              <h3>Lumen Docs</h3>
-              <div class="meta">
-                <span class="card-num">03</span>
-                <div class="tag-row"><span class="tag">Design System</span><span class="tag">SaaS</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
-        </a>
-
-        <a href="#" class="card reveal" data-tint="ink">
-          <div class="card-inner" data-card-inner>
-            <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg>
-            </div>
-          </div>
-          <div class="card-overlay">
-            <div class="card-label">
-              <h3>Northbound</h3>
-              <div class="meta">
-                <span class="card-num">04</span>
-                <div class="tag-row"><span class="tag">Web Design</span><span class="tag">Pitch Deck</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
-        </a>
-
-        <a href="#" class="card reveal" data-tint="flare">
-          <div class="card-inner" data-card-inner>
-            <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#252324" stroke-width="1.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            </div>
-          </div>
-          <div class="card-overlay">
-            <div class="card-label">
-              <h3>Hearth</h3>
-              <div class="meta">
-                <span class="card-num">05</span>
-                <div class="tag-row"><span class="tag">Mobile</span><span class="tag">UX Research</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
-        </a>
-
-        <a href="#" class="card reveal" data-tint="peri">
-          <div class="card-inner" data-card-inner>
-            <div class="card-img-layer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-            </div>
-          </div>
-          <div class="card-overlay">
-            <div class="card-label">
-              <h3>Coastline Capital</h3>
-              <div class="meta">
-                <span class="card-num">06</span>
-                <div class="tag-row"><span class="tag">Branding</span><span class="tag">Web App</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
-        </a>
-
+        <div class="card reveal" data-tint="flare"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Correos</h3><div class="meta"><span class="card-num">01</span><div class="tag-row"><span class="tag">Logística</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="peri"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>DGT</h3><div class="meta"><span class="card-num">02</span><div class="tag-row"><span class="tag">Gobierno</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="sun"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Abanca</h3><div class="meta"><span class="card-num">03</span><div class="tag-row"><span class="tag">Ilustración</span><span class="tag">Social Media</span><span class="tag">Email</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="ink"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>BBVA España</h3><div class="meta"><span class="card-num">04</span><div class="tag-row"><span class="tag">Banca</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="flare"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>BBVA Italia</h3><div class="meta"><span class="card-num">05</span><div class="tag-row"><span class="tag">Banca</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="peri"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Telefónica</h3><div class="meta"><span class="card-num">06</span><div class="tag-row"><span class="tag">Telecom</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="sun"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Skechers</h3><div class="meta"><span class="card-num">07</span><div class="tag-row"><span class="tag">Retail</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="ink"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>JLR</h3><div class="meta"><span class="card-num">08</span><div class="tag-row"><span class="tag">Automoción</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="flare"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Iberia</h3><div class="meta"><span class="card-num">09</span><div class="tag-row"><span class="tag">Aerolíneas</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="peri"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Alhambra</h3><div class="meta"><span class="card-num">10</span><div class="tag-row"><span class="tag">Video Editing</span><span class="tag">Social Media</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="sun"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Iberdrola</h3><div class="meta"><span class="card-num">11</span><div class="tag-row"><span class="tag">Energía</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="ink"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Repsol</h3><div class="meta"><span class="card-num">12</span><div class="tag-row"><span class="tag">Energía</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="flare"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Save the Children</h3><div class="meta"><span class="card-num">13</span><div class="tag-row"><span class="tag">ONG</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="peri"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>AENA</h3><div class="meta"><span class="card-num">14</span><div class="tag-row"><span class="tag">Aeropuertos</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="sun"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Alpla</h3><div class="meta"><span class="card-num">15</span><div class="tag-row"><span class="tag">Packaging</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="ink"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Imagin</h3><div class="meta"><span class="card-num">16</span><div class="tag-row"><span class="tag">Fintech</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="flare"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Better Balance</h3><div class="meta"><span class="card-num">17</span><div class="tag-row"><span class="tag">Retail</span></div></div></div></div></div>
+        <div class="card reveal" data-tint="peri"><div class="card-inner" data-card-inner><div class="card-img-layer"></div></div><div class="card-overlay"><div class="card-label"><h3>Google</h3><div class="meta"><span class="card-num">18</span><div class="tag-row"><span class="tag">Tecnología</span></div></div></div></div></div>
       </div>
     </div>
   </section>
@@ -503,26 +432,25 @@ footer a:hover{color:var(--flare);}
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow"><span class="dot"></span>02 — If you're still scrolling</span>
-            <h2>Here's my background.</h2>
+            <span class="eyebrow"><span class="dot"></span>02 — Un poco sobre mí</span>
+            <h2>Así ha sido mi camino.</h2>
           </div>
-          <p>The short version: eight years, four cities, one very consistent obsession with type.</p>
+          <p>La versión corta: más de 4 años en el mundo del diseño, entre el freelance y la agencia.</p>
         </div>
 
         <div class="stats-grid reveal">
-          <div class="stat"><div class="num">8+</div><div class="label">Years in the field</div></div>
-          <div class="stat"><div class="num">60+</div><div class="label">Projects shipped</div></div>
-          <div class="stat"><div class="num">12</div><div class="label">Industries worked in</div></div>
-          <div class="stat"><div class="num">3</div><div class="label">Cities called home</div></div>
+          <div class="stat"><div class="num">4+</div><div class="label">Años como diseñadora digital</div></div>
+          <div class="stat"><div class="num">18+</div><div class="label">Marcas con las que he trabajado</div></div>
+          <div class="stat"><div class="num">10+</div><div class="label">Sectores distintos</div></div>
+          <div class="stat"><div class="num">1</div><div class="label">Máster en UX/UI</div></div>
         </div>
 
         <div class="about-bio reveal">
-          <p>I'm a product and brand designer based between <strong>Madrid</strong> and wherever the project needs me. I started out doing identity work for small studios, then drifted into product design once I realized brand and interface are really the same problem at different zoom levels. These days I split my time between early-stage startups and the occasional brand refresh for people who've outgrown their first logo.</p>
+          <p>Soy <strong>Paula Rio</strong>, aunque en el mundo del diseño me conocen como Rivers. Llevo más de 4 años trabajando como diseñadora digital, actualmente en <strong>Accenture</strong>. Antes de eso trabajé como freelance creando assets y motion graphics para streamers. Me muevo entre el branding, el diseño UX/UI en Figma, el HTML y CSS, el email design, el motion graphics y la edición de vídeo — la suite Adobe entera es mi caja de herramientas.</p>
           <div class="timeline">
-            <div class="timeline-row"><span class="yrs">2017–19</span><div><div class="role">Graphic Designer</div><div class="org">Studio Marea</div></div></div>
-            <div class="timeline-row"><span class="yrs">2019–21</span><div><div class="role">Brand Designer</div><div class="org">Freelance, various clients</div></div></div>
-            <div class="timeline-row"><span class="yrs">2021–23</span><div><div class="role">Senior Product Designer</div><div class="org">Northwind Labs</div></div></div>
-            <div class="timeline-row"><span class="yrs">2023–Now</span><div><div class="role">Lead Designer</div><div class="org">Independent practice</div></div></div>
+            <div class="timeline-row"><span class="yrs">Freelance</span><div><div class="role">Diseño de Assets &amp; Motion Graphics</div><div class="org">Para creadores de contenido / streamers</div></div></div>
+            <div class="timeline-row"><span class="yrs">Máster</span><div><div class="role">Máster en UX/UI</div><div class="org">Especialización en experiencia de usuario</div></div></div>
+            <div class="timeline-row"><span class="yrs">Actualidad</span><div><div class="role">Diseñadora Digital</div><div class="org">Accenture</div></div></div>
           </div>
         </div>
       </div>
@@ -633,28 +561,63 @@ footer a:hover{color:var(--flare);}
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap contact">
-      <span class="eyebrow reveal"><span class="dot"></span>04 — What's next</span>
-      <h2 class="reveal">Got a project brewing?<br><span class="mark">I'd love to hear about it.</span></h2>
+      <span class="eyebrow reveal"><span class="dot"></span>04 — ¿Qué sigue?</span>
+      <h2 class="reveal">¿Tienes un proyecto en mente?<br><span class="mark">Me encantaría escucharlo.</span></h2>
       <div class="contact-links reveal">
-        <a href="mailto:hello@alexrivera.design" class="contact-btn primary">
+        <a href="mailto:hola@rivers.design" class="contact-btn primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-          Email me
+          Escríbeme
         </a>
         <a href="#" class="contact-btn secondary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          Find me on LinkedIn
+          Encuéntrame en LinkedIn
         </a>
       </div>
     </div>
   </section>
-
-  <div class="wrap">
-    <footer>
-      <span>Designed &amp; built by Alex Rivera · © 2026</span>
-      <div class="foot-links"><a href="#home">Back to top ↑</a></div>
-    </footer>
-  </div>
 </main>
+
+<!-- GROW A PLANT -->
+<section id="grow">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>05 — Antes de irte</span>
+        <h2>Riega mi plantita.</h2>
+      </div>
+      <p>Cada click la ayuda a crecer un poco más. Es solo tuya — nadie más la ve crecer.</p>
+    </div>
+
+    <div class="plant-widget reveal">
+      <svg class="plant-svg" viewBox="0 0 200 220" aria-hidden="true">
+        <ellipse class="plant-soil" cx="100" cy="196" rx="46" ry="10"/>
+        <path class="plant-pot" d="M62 176h76l-10 34a8 8 0 01-8 7H80a8 8 0 01-8-7z"/>
+        <line class="plant-stem" x1="100" y1="196" x2="100" y2="196"/>
+        <g class="plant-leaf plant-leaf-1"><path d="M100,166 C78,160 70,140 78,124 C96,132 104,152 100,166Z"/></g>
+        <g class="plant-leaf plant-leaf-2"><path d="M100,166 C122,160 130,140 122,124 C104,132 96,152 100,166Z"/></g>
+        <g class="plant-leaf plant-leaf-3"><path d="M100,128 C82,120 76,100 84,86 C100,96 106,114 100,128Z"/></g>
+        <g class="plant-leaf plant-leaf-4"><path d="M100,128 C118,120 124,100 116,86 C100,96 94,114 100,128Z"/></g>
+        <g class="plant-flower">
+          <circle class="petal" cx="100" cy="70" r="12"/>
+          <circle class="petal" cx="88" cy="80" r="12"/>
+          <circle class="petal" cx="112" cy="80" r="12"/>
+          <circle class="petal" cx="94" cy="94" r="12"/>
+          <circle class="petal" cx="106" cy="94" r="12"/>
+          <circle class="petal-center" cx="100" cy="83" r="9"/>
+        </g>
+      </svg>
+      <p class="plant-caption" data-plant-caption>Todavía es una semilla…</p>
+      <button type="button" class="plant-btn" data-plant-btn>💧 Riega la planta</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Diseñado y creado por Rivers · © 2026</span>
+    <div class="foot-links"><a href="#home">Subir ↑</a></div>
+  </footer>
+</div>
 
 <script>
 // ── Scroll reveal ──────────────────────────────────────
@@ -747,6 +710,63 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
 spySections.forEach(sec => spy.observe(sec));
+
+// ── Grow-a-plant widget (per-visitor, saved in this browser) ──
+(function(){
+  const MAX_GROWTH = 8;
+  const STEM_BASE_Y = 196;
+  const STEM_TOP_Y = 70;
+  const STORAGE_KEY = 'rivers_plant_growth';
+
+  const svg = document.querySelector('.plant-svg');
+  if(!svg) return;
+  const stem = svg.querySelector('.plant-stem');
+  const leaves12 = svg.querySelectorAll('.plant-leaf-1, .plant-leaf-2');
+  const leaves34 = svg.querySelectorAll('.plant-leaf-3, .plant-leaf-4');
+  const flower = svg.querySelector('.plant-flower');
+  const caption = document.querySelector('[data-plant-caption]');
+  const btn = document.querySelector('[data-plant-btn]');
+
+  function readGrowth(){
+    try {
+      const v = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+      return Number.isFinite(v) ? Math.min(Math.max(v, 0), MAX_GROWTH) : 0;
+    } catch(e){ return 0; }
+  }
+  function saveGrowth(v){
+    try { localStorage.setItem(STORAGE_KEY, String(v)); } catch(e){}
+  }
+  function captionFor(g){
+    if(g <= 0) return 'Todavía es una semilla…';
+    if(g <= 2) return '¡Ya ha brotado!';
+    if(g <= 4) return 'Está echando sus primeras hojas.';
+    if(g <= 6) return 'Cada vez tiene más hojas.';
+    if(g < MAX_GROWTH) return 'Le falta muy poco…';
+    return '¡Ha florecido del todo! 🌸';
+  }
+  function render(g){
+    const y2 = STEM_BASE_Y - (STEM_BASE_Y - STEM_TOP_Y) * (g / MAX_GROWTH);
+    stem.setAttribute('y2', y2.toFixed(1));
+    leaves12.forEach(el => el.classList.toggle('visible', g >= 3));
+    leaves34.forEach(el => el.classList.toggle('visible', g >= 6));
+    flower.classList.toggle('visible', g >= MAX_GROWTH);
+    caption.textContent = captionFor(g);
+    btn.textContent = g >= MAX_GROWTH ? '🌱 Plantar otra' : '💧 Riega la planta';
+  }
+
+  let growth = readGrowth();
+  render(growth);
+
+  btn.addEventListener('click', () => {
+    growth = growth >= MAX_GROWTH ? 0 : Math.min(growth + 1, MAX_GROWTH);
+    saveGrowth(growth);
+    render(growth);
+    btn.animate(
+      [{ transform: 'scale(1)' }, { transform: 'scale(1.12)' }, { transform: 'scale(1)' }],
+      { duration: 280, easing: 'ease-out' }
+    );
+  });
+})();
 </script>
 
 </body>
