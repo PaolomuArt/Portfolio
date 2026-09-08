@@ -30,13 +30,13 @@
     <a href="index.html#work" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Volver a clientes</a>
   </div>
 
-  <!-- 1. HEADER — nada visible hasta el hover -->
+  <!-- 1. HEADER — degradado de marca; el texto aparece al hover -->
   <div class="project-hero" data-tint="ink">
-    <img class="project-hero-img" src="imgs/repsol/01.png" alt="">
+    <div class="project-hero-brand repsol"><span class="brand-wordmark">Repsol</span></div>
     <div class="project-hero-scrim">
       <div>
-        <h1>Repsol</h1>
-        <p>[Completa aquí en una línea qué hiciste exactamente — por ejemplo: ilustración y piezas para redes sociales y campañas internas]</p>
+        <h1>Repsol — comunicación interna y rebranding</h1>
+        <p>Newsletter interna (maquetación HTML) · infografía divulgativa · motion para RRHH y LinkedIn · contenido para LinkedIn</p>
       </div>
     </div>
   </div>
@@ -50,29 +50,65 @@
   <div class="wrap">
     <div class="project-explain">
       <div class="text">
-        <p>[Añade aquí 1-2 párrafos cortos: qué problema resolvían estas piezas y cómo abordaste el diseño. No hace falta más — el texto funciona igual de corto que largo.]</p>
+        <p>Misma infografía, misma tabla comparativa, dos sistemas de marca: la pieza sobre sinergias entre IA generativa y científicos de datos, resuelta antes y después del rebranding. El contenido no cambia, solo el lenguaje visual —de una paleta teal corporativa a un sistema cálido con mascotas ilustradas propias.</p>
+        <p>Esa misma capacidad de sostener un sistema coherente se aplica a comunicación interna en movimiento: un vídeo de movilidad interna que anima siete vacantes como tarjetas, y contenido para LinkedIn que traduce temas técnicos —como la evolución del SEO en la era de la IA— a un formato legible sin perder rigor.</p>
       </div>
       <div class="images">
-        <div class="img-slot"><img src="imgs/repsol/mesa-de-trabajo-1.png" alt=""></div>
-        <div class="img-slot"><img src="imgs/repsol/mesa-de-trabajo-2.png" alt=""></div>
+        <div class="compare-slider">
+          <div class="compare-base"><img src="imgs/repsol/mesa-de-trabajo-1.png" alt="Tabla IA — después del rebranding"></div>
+          <div class="compare-overlay"><img src="imgs/repsol/mesa-de-trabajo-2.png" alt="Tabla IA — antes del rebranding"></div>
+          <span class="compare-tag compare-tag-a">ANTES</span>
+          <span class="compare-tag compare-tag-b">DESPUÉS</span>
+          <div class="compare-handle">
+            <div class="compare-handle-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- 4. GALERÍA DE CIERRE -->
+  <!-- 4. GALERÍA DE CIERRE — reel horizontal, se desliza lateralmente -->
   <div class="wrap">
-    <div class="project-gallery">
-      <div class="g-item"><img src="imgs/repsol/02.png" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/03.png" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/04.png" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/05.png" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/06.png" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/07.png" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/repsol-linkedin-glosario-digital.jpg" alt=""></div>
-      <div class="g-item"><img src="imgs/repsol/repsol-nl-5.jpg" alt=""></div>
-      <div class="g-item">
-        <video src="imgs/repsol/repsol-vacantes.mp4" poster="imgs/repsol/preview.webp" controls preload="none"></video>
-        <div class="g-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <p class="reel-caption">Desliza para ver toda la serie →</p>
+    <div class="project-reel">
+      <div class="reel-item">
+        <div class="reel-item-media">
+          <video src="imgs/repsol/repsol-vacantes.mp4" controls preload="metadata" playsinline></video>
+          <div class="g-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <p class="reel-item-caption">Vídeo — "¡Te estamos buscando!", movilidad interna</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/01.png" alt="Del chat al agente: la hoja de ruta"></div>
+        <p class="reel-item-caption">Infografía — portada de la serie</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/02.png" alt="Asistente de IA"></div>
+        <p class="reel-item-caption">Infografía — Asistente de IA</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/03.png" alt="La cuestión de los LLMs"></div>
+        <p class="reel-item-caption">Infografía — la cuestión de los LLMs</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/04.png" alt="RAG: generación aumentada por recuperación"></div>
+        <p class="reel-item-caption">Infografía — RAG</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/05.png" alt="Agente de IA"></div>
+        <p class="reel-item-caption">Infografía — Agente de IA</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/06.png" alt="Sistemas multiagente"></div>
+        <p class="reel-item-caption">Infografía — sistemas multiagente</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/07.png" alt="Tu hoja de ruta rápida"></div>
+        <p class="reel-item-caption">Infografía — cierre de la serie</p>
+      </div>
+      <div class="reel-item">
+        <div class="reel-item-media"><img src="imgs/repsol/repsol-linkedin-glosario-digital.jpg" alt="Tecnolujuria"></div>
+        <p class="reel-item-caption">Contenido adicional — glosario para LinkedIn</p>
       </div>
     </div>
   </div>
@@ -85,9 +121,7 @@
   </footer>
 </div>
 
-<script>
-document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-</script>
+<script src="project.js" defer></script>
 
 </body>
 </html>
