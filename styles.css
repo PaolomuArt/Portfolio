@@ -368,12 +368,12 @@ footer a:hover{color:var(--flare);}
 @media(max-width:780px){.project-explain{grid-template-columns:1fr;gap:32px;}}
 .project-explain .text p{font-size:18px;line-height:1.65;color:var(--ink-soft);}
 .project-explain .text p+p{margin-top:16px;}
-.project-explain .images{display:flex;flex-direction:column;gap:20px;}
+.project-explain .images{display:flex;flex-direction:column;gap:20px;align-items:center;}
 .project-explain .images .img-slot{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;}
 .project-explain .images img{width:100%;height:100%;object-fit:cover;display:block;}
 
 /* draggable before/after comparison — two stacked images, one clipped by a movable handle */
-.compare-slider{position:relative;width:100%;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;cursor:ew-resize;touch-action:pan-y;user-select:none;}
+.compare-slider{position:relative;width:100%;max-width:340px;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;cursor:ew-resize;touch-action:pan-y;user-select:none;}
 .compare-base,.compare-overlay{position:absolute;inset:0;}
 .compare-base img,.compare-overlay img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
 .compare-overlay{clip-path:inset(0 50% 0 0);}
@@ -401,14 +401,25 @@ footer a:hover{color:var(--flare);}
 .g-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(37,35,36,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;pointer-events:none;}
 .g-play svg{width:18px;height:18px;fill:var(--paper);margin-left:2px;}
 
-/* 4b. Collage — mosaic variant of the closing gallery, for a series of pieces with one full-format video */
+/* 4b. Collage — overlapping scattered pieces, not a bordered card grid; video sits apart at full format */
 .collage-caption{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);margin-bottom:14px;}
-.project-collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:155px;gap:var(--gap);padding-bottom:80px;}
-.collage-item{position:relative;grid-row:span 2;border-radius:var(--radius);overflow:hidden;}
-.collage-item img{width:100%;height:100%;object-fit:cover;display:block;}
-.collage-item.big{grid-column:span 2;}
-.collage-item.big video{width:100%;height:100%;object-fit:contain;display:block;background:var(--ink);}
-@media(max-width:780px){
-  .project-collage{grid-template-columns:repeat(2,1fr);}
-  .collage-item.big{grid-column:span 2;}
+.project-collage{display:flex;flex-wrap:wrap;justify-content:center;padding:36px 40px 100px;}
+.collage-item{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 12px 26px rgba(37,35,36,.22);transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
+.collage-item:hover{transform:rotate(0deg) scale(1.07)!important;z-index:9;box-shadow:0 18px 36px rgba(37,35,36,.32);}
+.collage-item img{display:block;width:100%;height:auto;pointer-events:none;}
+.collage-item:not(.big){width:190px;margin:0 -32px -14px 0;}
+.collage-item:nth-of-type(2){transform:rotate(-6deg);top:18px;}
+.collage-item:nth-of-type(3){transform:rotate(4deg);top:-10px;}
+.collage-item:nth-of-type(4){transform:rotate(-3deg);top:26px;}
+.collage-item:nth-of-type(5){transform:rotate(6deg);top:-4px;}
+.collage-item:nth-of-type(6){transform:rotate(-5deg);top:14px;}
+.collage-item:nth-of-type(7){transform:rotate(3deg);top:-16px;}
+.collage-item:nth-of-type(8){transform:rotate(-4deg);top:22px;}
+.collage-item:nth-of-type(9){transform:rotate(5deg);top:-2px;margin-right:0;}
+.collage-item.big{width:360px;margin:0 -32px 24px 0;box-shadow:0 16px 34px rgba(37,35,36,.28);}
+.collage-item.big video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:var(--ink);}
+@media(max-width:700px){
+  .project-collage{padding:24px 20px 80px;}
+  .collage-item:not(.big){width:120px;margin:0 -18px -10px 0;}
+  .collage-item.big{width:100%;margin:0 0 20px;}
 }
