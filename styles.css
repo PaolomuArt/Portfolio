@@ -172,29 +172,29 @@ section{padding:96px 0;}
 }
 
 /* =============================================
-   ABOUT — mobile-safe dark block
+   ABOUT — pinned dark reveal layer, covered by Approach
    ============================================= */
-.about-section{background:var(--ink);color:var(--paper);}
+#about{
+  position:sticky;
+  top:0;
+  z-index:1;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+}
 .about-section .eyebrow{color:rgba(250,250,250,.55);}
 .about-section .eyebrow .dot{background:var(--flare);}
 .about-section .section-head p{color:rgba(250,250,250,.6);}
 .about-section .section-head h2{color:var(--paper);}
 
-/* inner rounded card only on desktop */
-.about-inner{
-  background:var(--ink);
-  border-radius:0;
-  padding:96px 0;
-}
-@media(min-width:700px){
-  .about-inner{
-    border-radius:32px;
-    margin:0 28px;
-    padding:80px 0;
-    /* hack: compensate for the .wrap padding so content still aligns */
-  }
-  .about-section{background:var(--paper);}
-}
+.about-layout{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center;width:100%;padding:96px 0;}
+@media(max-width:900px){.about-layout{grid-template-columns:1fr;padding:64px 0;gap:32px;}}
+.about-illustration{aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;}
+.about-illustration img{width:100%;height:100%;object-fit:cover;display:block;}
+@media(max-width:900px){.about-illustration{max-width:280px;margin:0 auto;}}
 
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-bottom:56px;}
 @media(max-width:600px){.stats-grid{grid-template-columns:repeat(1,1fr);}}
