@@ -67,9 +67,10 @@
       </div>
     </div>
   </section>
+</main>
 
-  <!-- ABOUT — pinned dark reveal layer, covered by Approach as you scroll -->
-  <div class="sticky-pair">
+<!-- ABOUT — pinned dark reveal layer, covered by Approach as you scroll -->
+<div class="about-wrap">
   <section id="about" class="about-section">
     <div class="wrap">
       <div class="section-head reveal">
@@ -80,31 +81,30 @@
         <p>La versión corta: más de 4 años en el mundo del diseño, entre el freelance y la agencia.</p>
       </div>
 
+      <div class="stats-grid reveal">
+        <div class="stat"><div class="num">4+</div><div class="label">Años como diseñadora digital</div></div>
+        <div class="stat"><div class="num">18+</div><div class="label">Marcas con las que he trabajado</div></div>
+        <div class="stat"><div class="num">10+</div><div class="label">Sectores distintos</div></div>
+      </div>
+
       <div class="about-layout">
         <div class="about-illustration">
-          <img src="Render.gif" alt="Ilustración de Rivers trabajando en su portátil">
+          <img src="Render.webp" alt="Ilustración de Rivers trabajando en su portátil">
         </div>
-        <div class="about-content">
-          <div class="stats-grid reveal">
-            <div class="stat"><div class="num">4+</div><div class="label">Años como diseñadora digital</div></div>
-            <div class="stat"><div class="num">18+</div><div class="label">Marcas con las que he trabajado</div></div>
-            <div class="stat"><div class="num">10+</div><div class="label">Sectores distintos</div></div>
-          </div>
-
-          <div class="about-bio reveal">
-            <p>Soy <strong>Paula Rio</strong> — para el mundo del diseño, Rivers. Diseñadora digital en <strong>Accenture</strong>, con un recorrido freelance en motion graphics antes de eso. Branding, UX/UI, código y vídeo: la suite Adobe entera es mi caja de herramientas.</p>
-            <div class="timeline">
-              <div class="timeline-row"><span class="yrs">Freelance</span><div><div class="role">Diseño de Assets &amp; Motion Graphics</div><div class="org">Para creadores de contenido / streamers</div></div></div>
-              <div class="timeline-row"><span class="yrs">Máster</span><div><div class="role">Máster en UX/UI</div><div class="org">Formación especializada</div></div></div>
-              <div class="timeline-row"><span class="yrs">Actualidad</span><div><div class="role">Diseñadora Digital</div><div class="org">Accenture</div></div></div>
-            </div>
+        <div class="about-bio reveal">
+          <p>Soy <strong>Paula Rio</strong> — para el mundo del diseño, Rivers. Diseñadora digital en <strong>Accenture</strong>, con un recorrido freelance en motion graphics antes de eso. Branding, UX/UI, código y vídeo: la suite Adobe entera es mi caja de herramientas.</p>
+          <div class="timeline">
+            <div class="timeline-row"><span class="yrs">Freelance</span><div><div class="role">Diseño de Assets &amp; Motion Graphics</div><div class="org">Para creadores de contenido / streamers</div></div></div>
+            <div class="timeline-row"><span class="yrs">Máster</span><div><div class="role">Máster en UX/UI</div><div class="org">Formación especializada</div></div></div>
+            <div class="timeline-row"><span class="yrs">Actualidad</span><div><div class="role">Diseñadora Digital</div><div class="org">Accenture</div></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+</div>
 
-  <!-- APPROACH / PHILOSOPHY -->
+<!-- APPROACH / PHILOSOPHY -->
   <section id="approach">
     <div class="wrap">
       <div class="section-head reveal">
@@ -204,9 +204,9 @@
       </div>
     </div>
   </section>
-  </div>
 
-  <!-- CONTACT -->
+<!-- CONTACT — pinned dark reveal layer, covered by the footer -->
+<div class="contact-wrap">
   <section id="contact">
     <div class="wrap contact">
       <span class="eyebrow reveal"><span class="dot"></span>04 — ¿Qué sigue?</span>
@@ -223,7 +223,7 @@
       </div>
     </div>
   </section>
-</main>
+</div>
 
 <div class="wrap">
   <footer>
@@ -309,7 +309,7 @@ document.querySelectorAll('.phil-card').forEach(card => {
 });
 
 // ── Scroll-spy nav highlighting ─────────────────────────
-const spySections = document.querySelectorAll('main section[id]');
+const spySections = document.querySelectorAll('section[id]');
 const spyLinks = document.querySelectorAll('.nav-links a, .nav-cta');
 
 const spy = new IntersectionObserver(entries => {
