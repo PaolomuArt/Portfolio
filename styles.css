@@ -345,6 +345,8 @@ footer a:hover{color:var(--flare);}
 /* 1. Header — nothing visible until hover */
 .project-hero{position:relative;width:100%;aspect-ratio:16/8;overflow:hidden;background:var(--warmgrey);}
 .project-hero-img{width:100%;height:100%;object-fit:cover;display:block;}
+.project-hero.center-media{display:flex;align-items:center;justify-content:center;}
+.project-hero.center-media .project-hero-img{width:auto;max-width:52%;max-height:74%;object-fit:contain;border-radius:14px;box-shadow:0 24px 54px -14px rgba(37,35,36,.4);}
 .project-hero-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft);text-align:center;padding:20px;}
 .project-hero-scrim{
   position:absolute;inset:0;
@@ -416,6 +418,10 @@ footer a:hover{color:var(--flare);}
 .project-image-feature{width:100%;aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
 .project-image-feature img{width:100%;height:100%;object-fit:cover;display:block;}
 .project-image-feature.illustration{aspect-ratio:3000/2339;}
+.project-image-feature.social{aspect-ratio:3000/1964;}
 
 /* natural-ratio stacked images — no cropping, height follows the source image */
 .project-explain .images .natural-img{width:100%;border-radius:var(--radius);display:block;}
+
+/* small caption under a piece — what it is + the design work in it */
+.img-caption{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:var(--ink-soft);}
