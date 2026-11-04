@@ -2,6 +2,34 @@ document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
 
 document.querySelectorAll('.compare-slider').forEach(initCompareSlider);
 
+document.querySelectorAll('[data-slideshow]').forEach(initSlideshow);
+
+function initSlideshow(root){
+  const slides = [...root.querySelectorAll('.slide')];
+  const dots = [...root.querySelectorAll('.dot')];
+  if(!slides.length) return;
+  let current = slides.findIndex(s => s.classList.contains('active'));
+  if(current < 0) current = 0;
+  let timer;
+
+  function show(i){
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+  }
+
+  function restart(){
+    clearInterval(timer);
+    timer = setInterval(() => show(current + 1), 5000);
+  }
+
+  root.querySelector('[data-slide-prev]')?.addEventListener('click', () => { show(current - 1); restart(); });
+  root.querySelector('[data-slide-next]')?.addEventListener('click', () => { show(current + 1); restart(); });
+  dots.forEach((d, idx) => d.addEventListener('click', () => { show(idx); restart(); }));
+
+  restart();
+}
+
 function initCompareSlider(root){
   const overlay = root.querySelector('.compare-overlay');
   const handle = root.querySelector('.compare-handle');
