@@ -358,15 +358,15 @@ footer a:hover{color:var(--flare);}
 .project-explain .images .natural-img{width:100%;border-radius:var(--radius);display:block;}
 
 /* 4d. Slideshow — square social pieces, one at a time */
-.slideshow{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
+.slideshow{position:relative;width:100%;max-width:320px;margin:0 auto;aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
 .slideshow-track{position:relative;width:100%;height:100%;}
 .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .4s var(--ease);}
 .slide.active{opacity:1;}
-.slideshow-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(250,250,250,.9);color:var(--ink);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;transition:background .2s var(--ease);}
+.slideshow-arrow{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:rgba(250,250,250,.9);color:var(--ink);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;transition:background .2s var(--ease);}
 .slideshow-arrow:hover{background:var(--paper);}
-.slideshow-arrow svg{width:18px;height:18px;}
-.slideshow-arrow.prev{left:12px;}
-.slideshow-arrow.next{right:12px;}
+.slideshow-arrow svg{width:14px;height:14px;}
+.slideshow-arrow.prev{left:8px;}
+.slideshow-arrow.next{right:8px;}
 .slideshow-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;}
 .slideshow-dots .dot{width:8px;height:8px;border-radius:50%;background:rgba(250,250,250,.5);border:none;padding:0;cursor:pointer;transition:background .2s var(--ease),transform .2s var(--ease);}
 .slideshow-dots .dot.active{background:var(--paper);transform:scale(1.3);}
