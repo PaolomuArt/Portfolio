@@ -123,10 +123,10 @@ section{padding:96px 0;}
 .card[data-tint="peri"]  .card-img-layer{background:var(--peri);}
 .card[data-tint="ink"]   .card-img-layer{background:var(--ink);}
 .card-img-layer img{width:100%;height:100%;object-fit:cover;display:block;}
-.card-img-layer img.pos-abanca-card{object-position:center;}
-.card-img-layer img.pos-skechers-card{object-position:center;}
-.card-img-layer img.pos-alhambra-card{object-position:center;}
-.card-img-layer img.pos-repsol-card{object-position:center;}
+
+/* work-grid cards: show the whole piece, never crop it */
+#work .card-img-layer{inset:0;width:100%;height:100%;}
+#work .card-img-layer img{object-fit:contain;}
 
 /* decorative SVG icon inside the colour field */
 .card-img-layer svg{
