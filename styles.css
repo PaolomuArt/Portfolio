@@ -375,10 +375,10 @@ footer a:hover{color:var(--flare);}
 .country-switch-img{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
 .country-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .4s var(--ease);}
 .country-img.active{opacity:1;}
-.country-switch-buttons{display:flex;gap:10px;margin-top:16px;}
-.country-btn{padding:8px 20px;border-radius:30px;border:1px solid rgba(37,35,36,.15);background:transparent;color:var(--ink-soft);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);}
-.country-btn:hover{border-color:var(--ink);}
-.country-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.country-switch-buttons{position:absolute;bottom:14px;left:14px;display:flex;gap:8px;z-index:2;}
+.country-btn{padding:7px 18px;border-radius:30px;border:none;background:rgba(250,250,250,.85);color:var(--ink);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease);}
+.country-btn:hover{background:var(--paper);}
+.country-btn.active{background:var(--ink);color:var(--paper);}
 
 /* small caption under a piece — what it is + the design work in it */
 .img-caption{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:var(--ink-soft);}
