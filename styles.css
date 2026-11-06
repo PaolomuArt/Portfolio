@@ -309,6 +309,7 @@ footer a:hover{color:var(--flare);}
 /* 3. Explanation + stacked images */
 .project-explain{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:56px 0 72px;}
 @media(max-width:780px){.project-explain{grid-template-columns:1fr;gap:32px;}}
+.project-explain.text-only{grid-template-columns:1fr;max-width:700px;}
 .project-explain .text p{font-size:18px;line-height:1.65;color:var(--ink-soft);}
 .project-explain .text p+p{margin-top:16px;}
 .project-explain .images{display:flex;flex-direction:column;gap:20px;align-items:center;}
@@ -354,6 +355,7 @@ footer a:hover{color:var(--flare);}
 .project-image-feature img{width:100%;height:100%;object-fit:cover;display:block;}
 .project-image-feature.illustration{aspect-ratio:3000/2339;}
 .project-image-feature.social{aspect-ratio:3000/1964;}
+.project-image-feature.ratio-16-9{aspect-ratio:16/9;}
 
 /* natural-ratio stacked images — no cropping, height follows the source image */
 .project-explain .images .natural-img{width:100%;border-radius:var(--radius);display:block;}
