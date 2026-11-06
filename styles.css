@@ -356,6 +356,7 @@ footer a:hover{color:var(--flare);}
 
 /* natural-ratio stacked images — no cropping, height follows the source image */
 .project-explain .images .natural-img{width:100%;border-radius:var(--radius);display:block;}
+.project-explain .images .natural-img-small{width:72%;margin:0 auto;}
 
 /* 4d. Slideshow — square social pieces, one at a time */
 .slideshow{position:relative;width:100%;max-width:400px;margin:0 auto;aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
