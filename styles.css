@@ -371,5 +371,14 @@ footer a:hover{color:var(--flare);}
 .slideshow-dots .dot{width:7px;height:7px;border-radius:50%;background:rgba(250,250,250,.5);border:none;padding:0;cursor:pointer;transition:background .2s var(--ease),transform .2s var(--ease);}
 .slideshow-dots .dot.active{background:var(--paper);transform:scale(1.3);}
 
+/* 4e. Country switch — one wide image at a time, toggled by button */
+.country-switch-img{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
+.country-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .4s var(--ease);}
+.country-img.active{opacity:1;}
+.country-switch-buttons{display:flex;gap:10px;margin-top:16px;}
+.country-btn{padding:8px 20px;border-radius:30px;border:1px solid rgba(37,35,36,.15);background:transparent;color:var(--ink-soft);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);}
+.country-btn:hover{border-color:var(--ink);}
+.country-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
 /* small caption under a piece — what it is + the design work in it */
 .img-caption{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:var(--ink-soft);}

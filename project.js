@@ -4,6 +4,18 @@ document.querySelectorAll('.compare-slider').forEach(initCompareSlider);
 
 document.querySelectorAll('[data-slideshow]').forEach(initSlideshow);
 
+document.querySelectorAll('[data-country-switch]').forEach(initCountrySwitch);
+
+function initCountrySwitch(root){
+  const imgs = [...root.querySelectorAll('.country-img')];
+  const btns = [...root.querySelectorAll('.country-btn')];
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    const target = btn.dataset.countryTo;
+    imgs.forEach(img => img.classList.toggle('active', img.dataset.country === target));
+    btns.forEach(b => b.classList.toggle('active', b === btn));
+  }));
+}
+
 function initSlideshow(root){
   const slides = [...root.querySelectorAll('.slide')];
   const dots = [...root.querySelectorAll('.dot')];
