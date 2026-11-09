@@ -77,10 +77,10 @@ section{padding:96px 0;}
 /* =============================================
    PROJECT CARDS — parallax image, no text body
    ============================================= */
-.work-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gap);}
-@media(max-width:980px){.work-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:640px){.work-grid{grid-template-columns:repeat(2,1fr);}}
-#work .card{aspect-ratio:4/3;}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);}
+@media(max-width:980px){.work-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
+#work .card{aspect-ratio:9/16;}
 #work .card-overlay{opacity:1;}
 
 .card{
@@ -124,9 +124,10 @@ section{padding:96px 0;}
 .card[data-tint="ink"]   .card-img-layer{background:var(--ink);}
 .card-img-layer img{width:100%;height:100%;object-fit:cover;display:block;}
 
-/* work-grid cards: show the whole piece, so the phone is never cropped out */
+/* work-grid cards: fill the frame — drop the oversized parallax zoom
+   layer so the 9:16 cover-crop isn't zoomed in past the phone itself */
 #work .card-img-layer{inset:0;width:100%;height:100%;}
-#work .card-img-layer img{object-fit:contain;}
+#work .card-img-layer img{object-fit:cover;}
 
 /* decorative SVG icon inside the colour field */
 .card-img-layer svg{
