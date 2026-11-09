@@ -285,7 +285,8 @@ footer a:hover{color:var(--flare);}
 .back-link svg{width:14px;height:14px;}
 
 /* 1. Header — nothing visible until hover */
-.project-hero{position:relative;width:100%;aspect-ratio:16/8;overflow:hidden;background:var(--warmgrey);}
+.project-hero-wrap{position:relative;}
+.project-hero{width:100%;aspect-ratio:16/8;overflow:hidden;background:var(--warmgrey);}
 .project-hero.ratio-16-9{aspect-ratio:16/9;}
 .project-hero-img{width:100%;height:100%;object-fit:cover;display:block;}
 .project-hero-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft);text-align:center;padding:20px;}
@@ -295,10 +296,21 @@ footer a:hover{color:var(--flare);}
   opacity:0;transition:opacity .4s var(--ease);
   display:flex;align-items:flex-end;padding:40px;
 }
-.project-hero:hover .project-hero-scrim{opacity:1;}
+.project-hero-wrap:hover .project-hero-scrim{opacity:1;}
 @media(hover:none){.project-hero-scrim{opacity:1;}}
 .project-hero-scrim h1{color:var(--paper);font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,44px);line-height:1.1;}
 .project-hero-scrim p{color:rgba(250,250,250,.82);font-size:15px;margin-top:8px;max-width:640px;}
+
+/* mobile: title moves outside/below the hero image instead of overlaying it */
+@media(max-width:780px){
+  .project-hero-scrim{
+    position:static;
+    opacity:1;
+    background:var(--ink);
+    padding:28px 24px;
+  }
+  .project-hero-scrim h1{font-size:clamp(22px,6vw,30px);}
+}
 
 /* brand hero — gradient + wordmark instead of a screenshot, used when a client's own identity is the cover */
 
