@@ -369,7 +369,6 @@ footer a:hover{color:var(--flare);}
 .project-image-feature.illustration{aspect-ratio:3000/2339;}
 .project-image-feature.social{aspect-ratio:3000/1964;}
 .project-image-feature.ratio-16-9{aspect-ratio:16/9;}
-.project-image-feature.app-store{aspect-ratio:1920/1764;}
 .project-image-feature.ratio-4-5{aspect-ratio:4/5;max-width:480px;margin:0 auto;}
 .project-newsletter{max-width:340px;margin:0 auto;border-radius:var(--radius);overflow:hidden;}
 .project-newsletter img{width:100%;display:block;}
