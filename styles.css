@@ -307,7 +307,7 @@ footer a:hover{color:var(--flare);}
     position:static;
     opacity:1;
     background:var(--ink);
-    padding:28px 24px;
+    padding:28px;
   }
   .project-hero-scrim h1{font-size:clamp(22px,6vw,30px);}
 }
