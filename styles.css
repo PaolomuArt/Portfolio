@@ -39,6 +39,11 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;height:76
 .nav-cta{background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:30px;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s var(--ease),transform .2s var(--ease);}
 .nav-cta:hover{background:var(--flare);color:var(--ink);transform:translateY(-1px);}
 .nav-cta.active{background:var(--flare);color:var(--ink);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.lang-switch{display:flex;align-items:center;gap:2px;background:var(--warmgrey);border-radius:20px;padding:3px;}
+.lang-link{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.02em;padding:5px 10px;border-radius:16px;color:var(--ink-soft);transition:background .2s var(--ease),color .2s var(--ease);}
+.lang-link:hover{color:var(--ink);}
+.lang-link.active{background:var(--ink);color:var(--paper);}
 @media(max-width:780px){.nav-links{display:none;}.brand .role-chip{display:none;}}
 
 /* HERO */
