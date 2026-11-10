@@ -71,7 +71,6 @@ section{padding:96px 0;}
 .section-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,46px);margin-top:10px;}
 .section-head p{max-width:320px;color:var(--ink-soft);font-size:15px;}
 #work .section-head p{max-width:560px;}
-#work{padding-top:48px;}
 #approach .section-head h2{font-size:clamp(24px,2.8vw,34px);}
 
 /* =============================================
@@ -80,6 +79,7 @@ section{padding:96px 0;}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);max-width:840px;margin:0 auto;}
 @media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
 #work .card{aspect-ratio:9/16;}
+@media(max-width:640px){#work .card{aspect-ratio:16/9;}}
 #work .card-overlay{opacity:1;}
 
 .card{
