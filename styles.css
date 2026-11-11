@@ -364,8 +364,9 @@ footer a:hover{color:var(--flare);}
 .g-item img,.g-item video{width:100%;height:100%;object-fit:cover;display:block;background:var(--ink);}
 
 /* 4b. Featured video — shown uncropped at full format, above a smaller supporting row */
-.project-video-feature{width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--ink);margin-bottom:var(--gap);}
+.project-video-feature{width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--ink);}
 .project-video-feature video{width:100%;height:100%;object-fit:contain;display:block;background:var(--ink);}
+.wrap>.project-video-feature:first-child{margin-top:18px;}
 .project-gallery.stories .g-item{aspect-ratio:9/16;}
 
 /* 4c. Featured image — one wide standalone piece, uncropped, own aspect ratio */
