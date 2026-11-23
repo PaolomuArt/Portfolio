@@ -323,6 +323,23 @@ footer a:hover{color:var(--flare);}
 .project-meta{padding:18px 0;font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);}
 .project-meta strong{color:var(--ink);font-weight:600;}
 
+/* 2b. Case overview / what-I-did / process+result — 3-part top block, reused across every project page */
+.case-overview,.case-work,.case-result{max-width:600px;margin:0 auto;}
+.case-overview{padding:40px 0 28px;border-bottom:1px solid rgba(37,35,36,.1);}
+.case-meta p{margin:0 0 10px;line-height:1.5;font-size:17px;color:var(--ink-soft);}
+.case-meta p:last-child{margin-bottom:0;}
+.case-meta strong{color:var(--ink);}
+.case-meta .label{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);opacity:.7;margin-bottom:2px;}
+.case-work{padding:28px 0;}
+.case-work h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--ink);margin:0 0 14px;}
+.case-work ul{padding-left:18px;margin:0;}
+.case-work li{margin-bottom:12px;line-height:1.55;font-size:17px;color:var(--ink-soft);}
+.case-work li strong{color:var(--ink);}
+.case-result{background:var(--warmgrey);padding:24px 28px;border-radius:var(--radius);margin-bottom:40px;}
+.case-result p{margin:0 0 14px;line-height:1.55;font-size:17px;color:var(--ink-soft);}
+.case-result p:last-child{margin-bottom:0;}
+.case-result .label{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);opacity:.7;margin-bottom:2px;}
+
 /* 3. Explanation + stacked images */
 .project-explain{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:56px 0 72px;}
 @media(max-width:780px){.project-explain{grid-template-columns:1fr;gap:32px;}}
