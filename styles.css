@@ -323,6 +323,12 @@ footer a:hover{color:var(--flare);}
 .project-meta{padding:18px 0;font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);}
 .project-meta strong{color:var(--ink);font-weight:600;}
 
+/* 2b. Brief / role / process / result summary block */
+.project-brief{padding:32px 0 8px;}
+.project-brief p{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:760px;}
+.project-brief p+p{margin-top:14px;}
+.project-brief strong{color:var(--ink);}
+
 /* 3. Explanation + stacked images */
 .project-explain{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:56px 0 72px;}
 @media(max-width:780px){.project-explain{grid-template-columns:1fr;gap:32px;}}
