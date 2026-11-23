@@ -325,9 +325,14 @@ footer a:hover{color:var(--flare);}
 
 /* 2b. Brief / role / process / result summary block */
 .project-brief{padding:32px 0 8px;}
+.project-brief h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--ink);margin-bottom:16px;}
 .project-brief p{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:760px;}
 .project-brief p+p{margin-top:14px;}
 .project-brief strong{color:var(--ink);}
+.project-brief ul{margin:8px 0 0;padding-left:20px;max-width:760px;}
+.project-brief li{font-size:17px;line-height:1.65;color:var(--ink-soft);}
+.project-brief li+li{margin-top:10px;}
+.project-brief li strong{color:var(--ink);}
 
 /* 3. Explanation + stacked images */
 .project-explain{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding:56px 0 72px;}
@@ -373,6 +378,7 @@ footer a:hover{color:var(--flare);}
 .project-video-feature{width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--ink);}
 .project-video-feature video{width:100%;height:100%;object-fit:contain;display:block;background:var(--ink);}
 .wrap>.project-video-feature:first-child{margin-top:18px;}
+.project-image-feature+.project-video-feature{margin-top:var(--gap);}
 .project-gallery.stories .g-item{aspect-ratio:9/16;}
 
 /* 4c. Featured image — one wide standalone piece, uncropped, own aspect ratio */
@@ -383,6 +389,7 @@ footer a:hover{color:var(--flare);}
 .project-image-feature.ratio-16-9{aspect-ratio:16/9;}
 .project-newsletter{max-width:340px;margin:0 auto;border-radius:var(--radius);overflow:hidden;}
 .project-newsletter img{width:100%;display:block;}
+.project-newsletter.wide{max-width:640px;}
 .project-duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 .project-duo .project-newsletter,
 .project-duo .slideshow.ratio-4-5{max-width:280px;margin:0 auto;}
