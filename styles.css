@@ -324,6 +324,7 @@ footer a:hover{color:var(--flare);}
 .project-meta strong{color:var(--ink);font-weight:600;}
 
 /* 2b. Case overview / what-I-did / process+result — 3-part text block, same style throughout, reused across every project page */
+.case-text-standalone{max-width:600px;margin:0 auto;padding:40px 0;}
 .case-overview,.case-work,.case-result{margin:0;}
 .case-overview{padding:0 0 28px;border-bottom:1px solid rgba(37,35,36,.1);}
 .case-work{padding:28px 0;border-bottom:1px solid rgba(37,35,36,.1);}
@@ -393,8 +394,8 @@ footer a:hover{color:var(--flare);}
 @media(max-width:780px){.project-duo{grid-template-columns:1fr;gap:32px;}}
 
 /* natural-ratio stacked images — no cropping, height follows the source image */
-.project-explain .images .natural-img{width:100%;border-radius:var(--radius);display:block;}
-.project-explain .images .natural-img-small{width:72%;margin:0 auto;}
+.natural-img{width:100%;border-radius:var(--radius);display:block;}
+.natural-img-small{width:72%;margin:0 auto;}
 
 /* 4d. Slideshow — square social pieces, one at a time */
 .slideshow{position:relative;width:100%;max-width:400px;margin:0 auto;aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;background:var(--warmgrey);}
